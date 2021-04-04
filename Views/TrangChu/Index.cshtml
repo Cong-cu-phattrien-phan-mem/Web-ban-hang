@@ -1,0 +1,52 @@
+﻿@using BookStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_layoutuser.cshtml";
+}
+<h1 style="Text-align:Center; color:red"> SẢN PHẨM MỚI </h1>
+
+
+
+
+@foreach (var sp in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4 grid-top">
+        <div class="thumbnail">
+			<a href="@Url.Action("Details", "TrangSanPham", new { id = sp.Masp})" class="b-link-stripe b-animate-go  thickbox">
+				<img src="~/Hinhsanpham/@sp.AnhSP " width="285" height="290">
+				<div class="b-wrapper">
+					<h3 class="b-animate b-from-left    "></h3>
+				</div>
+				<div>
+					<br />
+					<h4 style="text-align:center">
+						@sp.TenSP
+
+					</h4>
+					<p></p>
+				</div>
+			</a>
+        </div>
+    </div>
+}
+@* Tao liên kết các trang  *@
+	Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+	<div class="MenuTrang">
+
+		@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+	</div>
+	<style>
+		.MenuTrang li {
+			display: inline;
+		}
+	</style>
+
+<script>
+    $('#btnSearch').on('click', function () {
+        var giatrinhap = $('#txtInput').val();
+        alert(giatrinhap);
+    });
+</script>
+

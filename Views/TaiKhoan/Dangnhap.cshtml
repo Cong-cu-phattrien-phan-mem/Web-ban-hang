@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Shared/_LayoutDangnhap.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <h3>ĐĂNG NHẬP KHÁCH HÀNG</h3>
+        <div id="Note">
+            <p>Nếu bạn đã có tài khoản thì vui lòng đăng nhập để trải nghiệm shop.</p>
+            <p>Nếu chưa có thì click vào đây để đăng ký <a href="dangky.html">ĐĂNG KÝ</a></p>
+        </div>
+
+        <div class="form">
+            <div class="form-group">
+                <label for="">UserName:</label>
+                <input type="text" name="TenDN" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+
+            <div class="form-group">
+                <label for="">Password:</label>
+                <input type="password" name="Matkhau" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+
+            <button type="submit" class="btn btn-outline-success">Đăng Nhập</button>
+        </div>
+        <hr />
+    </div>
+}
+

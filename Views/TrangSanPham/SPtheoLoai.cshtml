@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BookStore.Models.SANPHAM>
+@{
+    ViewBag.Title = "SPtheoLoai";
+    Layout = "~/Views/Shared/_layoutsp.cshtml";
+}
+
+@foreach (var sp in Model)
+{
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <a href="@Url.Action("Details","TrangSanPham",new {id =	sp.Masp})">
+                <img alt="@sp.TenSP" src="~/HinhSanPham/@sp.AnhSP" width="200" />
+                <div>
+                    <br />
+                    <h4 style="text-align:center">
+                        @sp.TenSP
+
+                    </h4>
+                    <p></p>
+                </div>
+            </a>
+        </div>
+    </div>
+}
+

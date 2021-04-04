@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BookStore.Models.LOAI>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPtheoLoai","TrangSanPham",new { id = item.Maloai })" class="mepanel">
+            @item.Tenloai
+        </a>
+    }
+
+</div>
