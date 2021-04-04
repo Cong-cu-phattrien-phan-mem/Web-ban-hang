@@ -1,0 +1,106 @@
+﻿@model BookStore.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Suasp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Quản lý danh sách sản phẩm</h1>
+
+    <div class="row">
+        <div class="infoShoes col-md-6 wrapper">
+            <div class="preview col-md-6">
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane active" id="pic-1"><img src="@Url.Content("~/HinhSanPham/"+ Model.AnhSP)" style="height:300px"  /></div>
+                </div>
+
+                <ul class="preview-thumbnail nav nav-tabs">
+                    <div class="logo__small-img"></div>
+                    <div class="menu-img"><span></span></div>
+                   
+                </ul>
+            </div>
+
+            <div class="details col-md-6">
+
+                <h3 class="product-title">@Html.DisplayFor(model => model.TenSP)</h3>
+
+                <h4 class="price">Giá bán: @String.Format("{0:0,0}", Model.Giaban) VND</h4>
+
+                <h6 class="producer-info"> <b>Danh Mục:</b> @Html.DisplayFor(model => model.DANHMUC.TenDM)</h6>
+
+                <h6 class="category"> <b>Loại:</b> @Html.DisplayFor(model => model.LOAI.Maloai)</h6>
+
+                <h6> <b>Loại:</b> Rep</h6>
+
+                <h6 class="content">
+                    <b>Mô Tả:</b>   @Html.DisplayFor(model => model.Chitiet)
+
+                </h6>
+            </div>
+        </div>
+
+        <div class="col-md-1" style="border-left: 1px solid #858796"></div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="form_name">Tên sản phẩm *</label>
+                    @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+                    @*<input id="form_name" type="text" name="name" class="form-control" placeholder="Vui lòng nhập tên sản phẩm *" required="required" data-error="Firstname is required.">*@
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="form_phone">Giá sản phẩm *</label>
+                    @Html.EditorFor(model => model.Giaban, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Giaban, "", new { @class = "text-danger" })
+
+                    <div class="help-block with-errors"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="form_username">Danh Mục *</label>
+                    @Html.DropDownList("MaDM", null, new { @class = "form-control" })
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="form_username">Loại *</label>
+                    @Html.DropDownList("Maloai", null, new { @class = "form-control" })
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <h5>Ảnh bìa</h5>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fup">
+                        <label class="custom-file-label" for="customFile">Chọn file</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="form_username">Ngày cập nhật *</label>
+                    <input type="date" class="form-control form-control-user" name="Ngaycapnhat">
+                    @Html.ValidationMessageFor(model => model.Ngaycapnhat, "", new { @class = "text-danger" })
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="form_username">Số lượng tồn *</label>
+                    @Html.EditorFor(model => model.SoLuongTon, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SoLuongTon, "", new { @class = "text-danger" })
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group" style="width: 100%; height: 300px;">
+                    <label for="form_username">Nội dung *</label>
+                    <textarea name="Mota"></textarea>
+                </div>
+                <input class="btn btn-info" type="submit" style="border:none; background-color:red;width:100px" value="Sửa" />
+                <a href="@Url.Action("Sanpham", "Admin")" class="btn btn-info" role="button" style="width:100px">Trở về</a>
+            </div>
+
+        }
+    </div>
+</div>

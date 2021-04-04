@@ -1,0 +1,61 @@
+﻿@model BookStore.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Xoasp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;color:blue">Thông tin chi tiết</h2>
+
+<div class="container-fluid">
+    <div class="wrapper row">
+        <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+                <div class="tab-pane active" id="pic-1"><img src="@Url.Content("~/HinhSanPham/"+ Model.AnhSP)" style="height:300px" /></div>
+                
+            </div>
+
+            <ul class="preview-thumbnail nav nav-tabs">
+                <div class="logo__small-img"></div>
+                <div class="menu-img"><span></span></div>
+               
+            </ul>
+        </div>
+
+        <div class="details col-md-3">
+
+            <h3 class="product-title">@Html.DisplayFor(model => model.TenSP)</h3>
+
+            <div class="rating">
+
+                <div class="stars">
+                    <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span>
+                </div> <span class="review-no">123 đánh giá</span>
+            </div>
+
+            <h4 class="price">Giá bán: @String.Format("{0:0,0}", Model.Giaban) VND</h4>
+            <h6 class="producer-info"> <b>Danh mục:</b> @Html.DisplayFor(model => model.DANHMUC.TenDM)</h6>
+
+            <h6 class="category"> <b>Lọa:</b> @Html.DisplayFor(model => model.LOAI.Maloai)</h6>
+
+            <h6> <b>Loại:</b> Rep</h6>
+
+            <h6 class="content">
+                <b>Mô Tả:</b> @Html.DisplayFor(model => model.Chitiet)
+            </h6>
+
+            
+            <p>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @*<button class="btn btn-info" type="submit" style="border:none; background-color:red"></button>*@
+                    <input class="btn btn-info" type="submit" style="border:none; background-color:red;width:100px" value="Xóa" />
+                    <a href="@Url.Action("Sanpham", "Admin")" class="btn btn-info" role="button" style="width:100px">Trở về</a>
+                }
+
+            </p>
+        </div>
+    </div>
+
+</div>

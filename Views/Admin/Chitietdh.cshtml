@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BookStore.Models.CHITIETDONHANG>
+
+
+@{
+    ViewBag.Title = "Chitietdh";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center; color:orangered">Chi Tiết Đơn Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dongia)
+            </td>
+
+        </tr>
+    }
+    <td style="text-align:center">
+        <a href="/Admin/Chitietdh?id=@ViewBag.ID&giaohang=false" style="background-color:red; color:white " type="button" class="btn btn-danger">Huy don hang</a>
+        <a href="/Admin/Chitietdh?id=@ViewBag.ID&giaohang=true" style="background-color:blue ; color:white " type="button" class="btn btn-success">Xac nhan don hang</a>
+    </td>
+</table>

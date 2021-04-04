@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BookStore.Models.DONHANG>
+
+@{
+    ViewBag.Title = "DonHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center; color:orangered">Đơn Hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG.HoTen)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaydat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaygiao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dathanhtoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tinhtranggiaohang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KHACHHANG.HoTen)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaydat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaygiao)
+        </td>
+        <td>
+            @( item.Dathanhtoan == false ? "Chưa thanh toán" : "Đã thanh toán" )
+        </td>
+        <td>
+            @( item.Tinhtranggiaohang == false ? "Hủy đơn hàng" : "Xác nhận đơn hàng" )
+
+        </td>
+        <td>
+            <a href="@Url.Action("Chitietdh", "Admin", new { id = item.MaDH })" class="btn btn-info" role="button" style="border:none"><i class="fa fa-edit"></i></a>
+
+        </td>
+    </tr>
+}
+
+</table>

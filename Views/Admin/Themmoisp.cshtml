@@ -1,0 +1,94 @@
+﻿@model BookStore.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Themmoisp";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;color:blue">Thêm Sản Phẩm Mới</h2>
+
+@using (Html.BeginForm("Themmoisp", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.TenSP, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5>Tên Sản Phẩm</h5>
+        <div>
+            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Giaban, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5>Giá Bán</h5>
+        <div>
+            @Html.EditorFor(model => model.Giaban, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Giaban, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Mota, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5>Mô tả</h5>
+        <div>
+            @*@Html.EditorFor(model => model.Mota, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mota, "", new { @class = "text-danger" })*@
+            <textarea name="Chitiet"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AnhSP, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="fileUpload" />
+            @*thong bao trung*@
+            @ViewBag.Thongbao
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Ngaycapnhat, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5>Ngày cập nhật</h5>
+        <div>
+            <input type="date" class="form-control form-control-user" name="Ngaycapnhat">
+            @Html.ValidationMessageFor(model => model.Ngaycapnhat, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Soluongton, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <h5>Số lượng tồn</h5>
+        <div>
+            @Html.EditorFor(model => model.SoLuongTon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SoLuongTon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h5>Danh Mục</h5>
+            <div>
+                @Html.DropDownList("MaDM", null, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="form-group" style="text-align:center">
+        <div>
+            <input type="submit" value="Thêm mới" class="btn btn-default" style="background-color:deepskyblue; color:white;width:200px" />
+            <a href="@Url.Action("Sanpham", "Admin")" class="btn btn-info" role="button" style="width:200px">Trở về</a>
+        </div>
+    </div>
+</div>
+}
+
+

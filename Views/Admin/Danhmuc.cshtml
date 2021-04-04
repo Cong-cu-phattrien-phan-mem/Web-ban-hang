@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BookStore.Models.DANHMUC>
+
+@{
+    ViewBag.Title = "Danhmuc";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Mục Nhà Sản Xuất</h2>
+
+<p>
+    <a href="@Url.Action("ThemmoiDM","Admin")" class="btn btn-info" role="button">Tạo mới Danh Mục</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDM)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.MaDM)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TenDM)
+            </td>
+            
+            <td>
+                <a href="@Url.Action("Chitietdm", "Admin", new { id = item.MaDM })" class="btn btn-info" role="button" style="border:none"><i class="fa fa-edit"></i></a>
+                <a href="@Url.Action("Suadm", "Admin", new { id = item.MaDM })" class="btn btn-info" role="button" style="background-color:green; border:none"><i class="fa fa-edit"></i></a>
+                <a href="@Url.Action("Xoadm", "Admin", new { id = item.MaDM })" class="btn btn-info" style="background-color:red;border:none" role="button"><i class="fa fa-edit"></i></a>
+
+            </td>
+        </tr>
+    }
+
+</table>

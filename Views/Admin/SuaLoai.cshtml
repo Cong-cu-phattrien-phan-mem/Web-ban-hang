@@ -1,0 +1,37 @@
+﻿@model BookStore.Models.LOAI
+
+@{
+    ViewBag.Title = "SuaLoai";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ĐIỀU CHỈNH THÔNG TIN LOẠI HÀNG</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Maloai)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tenloai, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tenloai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tenloai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style="text-align:center">
+                <input class="btn btn-info" type="submit" style="border:none; background-color:blue;width:100px" value="Sửa" />
+                <a href="@Url.Action("LOAI", "Admin")" class="btn btn-info" role="button" style="width:100px">Trở về</a>
+            </div>
+        </div>
+    </div>
+}
+
+    

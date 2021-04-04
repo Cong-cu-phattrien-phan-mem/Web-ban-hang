@@ -1,0 +1,96 @@
+﻿@using BookStore.Models
+@model IEnumerable<BookStore.Models.SANPHAM>
+
+
+@{
+    ViewBag.Title = "Sanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+<h2 style="color:orangered">Danh Sách Sản Phẩm</h2>
+
+<p>
+    @*<a href="@Url.Action("Create", "Create")" class="btn btn-info" role="button" style="border:none"><i class="material-icons" ></i></a>*@
+    <a href="@Url.Action("Themmoisp","Admin")" class="btn btn-info" role="button">Tạo mới sản phẩm</a>
+</p>
+<table class="table">
+    <tr>
+        <th style="width:200px">
+            Tên sản phẩm
+        </th>
+        <th style="width:100px">
+            Giá bán
+        </th>
+        <th style="width:300px">
+            Mô tả sản phẩm
+        </th>
+        <th style="width:120px">
+            Ảnh sản phẩm
+        </th>
+        <th style="width:150px">
+            Ngày đăng
+        </th>
+        <th style="width:120px">
+            Mã loại
+        </th>
+        <th style="width:100px">
+            Mã danh mục
+        </th>
+        <th style="width:120px">
+            Số lượng tồn
+        </th>
+        <th style="width:200px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Giaban)
+        </td>
+        <td>
+
+            @Truncate(item.Chitiet, 100)
+        </td>
+        <td>
+            <img src="@Url.Content("~/HinhSanPham/" + item.AnhSP)" style="height:150px" />
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaycapnhat)
+
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAI.Maloai)
+        </td>
+        <td>
+            
+            @Html.DisplayFor(modelItem => item.DANHMUC.TenDM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            <a href="@Url.Action("Chitiet", "Admin", new { id = item.Masp })" class="btn btn-info" role="button" style="border:none"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Suasp", "Admin", new { id = item.Masp })" class="btn btn-info" role="button" style="background-color:green; border:none"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Xoasp", "Admin", new { id = item.Masp })" class="btn btn-info" style="background-color:red;border:none" role="button"><i class="fa fa-edit"></i></a>
+        </td>
+    </tr>
+    }
+
+</table>

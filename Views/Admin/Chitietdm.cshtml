@@ -1,0 +1,37 @@
+﻿@model BookStore.Models.DANHMUC
+
+@{
+    ViewBag.Title = "Chitietdm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;color:blue">Chi Tiết Danh Mục</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Danh Mục:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDM)
+        </dd>
+
+        <dt>
+            Tên Danh Mục:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDM)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDM }) |
+    @Html.ActionLink("Trở về", "Danhmuc")
+</p>

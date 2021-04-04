@@ -1,0 +1,42 @@
+﻿@model BookStore.Models.DANHMUC
+
+@{
+    ViewBag.Title = "Xoadm";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center;color:blue">Danh Mục</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Danh Mục:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDM)
+        </dd>
+
+        <dt>
+            Tên Danh Mục:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDM)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input class="btn btn-info" type="submit" style="border:none; background-color:red;width:100px" value="Xóa" />
+            @Html.ActionLink("Back to List", "Danhmuc")
+        </div>
+    }
+</div>

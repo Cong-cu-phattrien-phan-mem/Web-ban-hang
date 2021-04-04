@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BookStore.Models.LOAI>
+
+@{
+    ViewBag.Title = "Loai";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Mục Loại</h2>
+
+<p>
+    <a href="@Url.Action("ThemmoiLoai","Admin")" class="btn btn-info" role="button">Tạo mới NSX</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Mã loại
+        </th>
+        <th>
+            Tên loại
+        </th>
+        <th>
+           Tên danh mục
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maloai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenloai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DANHMUC.TenDM)
+        </td>
+        <td>
+            <a href="@Url.Action("Chitietloai", "Admin", new { id = item.Maloai })" class="btn btn-info" role="button" style="border:none"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Sualoai", "Admin", new { id = item.Maloai })" class="btn btn-info" role="button" style="background-color:green; border:none"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Xoaloai", "Admin", new { id = item.Maloai })" class="btn btn-info" style="background-color:red;border:none" role="button"><i class="fa fa-edit"></i></a>
+
+        </td>
+    </tr>
+    }
+
+</table>

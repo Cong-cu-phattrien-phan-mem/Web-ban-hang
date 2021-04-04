@@ -1,0 +1,49 @@
+﻿@model BookStore.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Chitiet";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thông tin chi tiết</h2>
+
+<div class="container">
+    <div class="wrapper row">
+        <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+                <div class="tab-pane active" id="pic-1"><img src="@Url.Content("~/HinhSanPham/"+ Model.AnhSP)" style="width:500px" /></div>
+                
+            </div>
+
+            <ul class="preview-thumbnail nav nav-tabs">
+                <div class="logo__small-img"></div>
+                <div class="menu-img"><span></span></div>
+               
+            </ul>
+        </div>
+
+        <div class="details col-md-3">
+
+            <h3 class="product-title">@Html.DisplayFor(model => model.TenSP)</h3>
+
+            
+
+            <h4 class="price">Giá bán: @String.Format("{0:0,0}", Model.Giaban) VND</h4>
+            <h6 class="producer-info"> <b>Danh Mục:</b> @Html.DisplayFor(model => model.DANHMUC.TenDM)</h6>
+
+            <h6 class="category"> <b>Loại:</b> @Html.DisplayFor(model => model.LOAI.Tenloai)</h6>
+
+            <h6> <b>Loại:</b> Rep</h6>
+
+            <h6 class="content">
+                <b>Mô Tả:</b> @Html.DisplayFor(model => model.Chitiet)
+            </h6>
+
+         
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Chỉnh sửa", "Suasp", new { id = Model.Masp })|
+        @Html.ActionLink("Trở về", "Sanpham")
+    </p>
+</div>
