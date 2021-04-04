@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Blog Làm Đẹp</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!--theme-style-->
+    
+    <link href="~/Content/blog.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="png" href="~/images/logo.png" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+    <!-- start menu -->
+    <link href="~/Content/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/memenu.js"></script>
+    <script>$(document).ready(function () { $(".memenu").memenu(); });</script>
+    <script src="~/Scripts/simpleCart.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="search">
+                    <form>
+                        <input type="text" value="Tìm kiếm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="Go">
+                    </form>
+                </div>
+                <div class="header-left">
+                    <ul>
+                        
+                        <li><a href="@Url.Action("Dangnhap","TaiKhoan")">Đăng nhập</a></li>
+                        <li><a href="@Url.Action("DangKy","TaiKhoan")">Đăng ký</a></li>
+
+                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <a href="@Url.Action("Index","TrangChu")"><img src="~/images/free_horizontal_on_white_by_logaster.png" alt=""></a>
+                </div>
+                <div class=" h_menu4">
+                    <ul class="memenu skyblue">
+                        <li class="active grid"><a class="color8" href="@Url.Action("Index","TrangChu")">Home</a></li>
+
+                        <li>
+                            <a class="color1" href="#">Danh mục</a>
+                            <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Sản Phẩm:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Danhmuc", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Gian Hàng:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Loai", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="color2" href="@Url.Action("Index", "GioiThieu")">Giới Thiệu</a></li>
+
+                        <li><a class="color4" href="#">Blog</a></li>
+                        <li><a class="color6" href="@Url.Action("LienHe", "TrangChu")">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div>
+            @RenderBody()
+        </div>
+        <section class="main wrapper">
+            <section class="blog">
+                <div class="post">
+                    <h2><a href="./post.html">Cẩm nang chọn nước hoa từ A-Z</a></h2>
+                    <p class="post-meta">Đăng ngày 07/01/2020 | <a href="./post1.html">5 comments</a></p>
+                    <div class="post-image"><img src="../images/62493549_2235448170098939_2776857903468904448_n.jpg" width="190" height="190 x` alt="" /></div>
+                    
+                    <div class="post-summary">
+                        <p>Nước hoa bao bao gồm các chiết xuất từ tinh chất thơm pha loãng trong nước và các loại cồn cao cấp. Tỷ lệ pha của khác nhau quyết định độ mạnh của nước hoa và độ bền mùi của hương liệu. Các cấp độ mùi bao gồm:</p>
+                        <p class="post-more"><a href="@Url.Action("Post1", "Blog")" class="green">Read More</a></p>
+                    </div>
+                </div><!-- .post end -->
+
+
+                <div class="clear"></div>
+            </section><!-- .blog end -->
+
+            <section class="blog">
+                <div class="post">
+                    <h2><a href="./post.html">Mẹo dùng mỹ phẩm đa năng</a></h2>
+                    <p class="post-meta">Đăng ngày 07/01/2020 | <a href="./post2.html">10 comments</a></p>
+                    <div class="post-image"><img src="../images/63795701_1023163604545612_9166545951626625024_n.jpg" width="190" height="190" alt="" /></div>
+                    
+                    <div class="post-summary">
+                        <p>Trong rất nhiều trường hợp, bạn sẽ quên không mang theo phấn mắt, không mang theo son môi… Lúc này, cách sử dụng một loại mỹ phẩm nhiều công dụng sẽ là cứu cánh cho bạn.</p>
+                        <p class="post-more"><a href="@Url.Action("Post2", "Blog")" class="green">Read More</a></p>
+                    </div>
+                </div><!-- .post end -->
+
+
+                <div class="clear"></div>
+            </section><!-- .blog end -->
+            <div class="clear"></div>
+
+            <section class="blog">
+                <div class="post">
+                    <h2><a href="./post.html">Mẹo giúp làn da quyến rũ “từ đầu đến chân”</a></h2>
+                    <p class="post-meta">Đăng ngày 07/01/2020 | <a href="./post3.html">15 comments</a></p>
+                    <div class="post-image"><img src="../images/64267418_612056522633627_5880325856227753984_n.jpg" width="190" height="190" alt="" /></div>
+                    
+                    <div class="post-summary">
+                        <p>
+                            Mẹo giúp làn da quyến rũ “từ đầu đến chân”
+                            Trắng hồng và mịn hàng cực kỳ luôn đó các bạn ạ!
+                            Đừng tưởng là chỉ có thời tiết hanh khô của mùa đông thì chúng mình mới phải quan tâm đến da thôi nha! Vào khí hậu nắng nóng của mùa hè, mồ hôi và bụi càng có cơ hội tấn công da xinh của chúng mình. Nắm vững những bí kíp đơn giản sau để giữ cho da luôn mềm mại và tràn đầy sức sống nhé!
+                        </p>
+                        <p class="post-more"><a href="@Url.Action("Post3", "Blog")" class="green">Read More</a></p>
+                    </div>
+                </div><!-- .post end -->
+
+
+                <div class="clear"></div>
+            </section><!-- .blog end -->
+        </section><!-- .main end -->
+
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top-at">
+
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông tin thêm</h4>
+                    <ul class="nav-bottom">
+                        <li><a href="#">Cách đặt mua</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Địa chỉ</a></li>
+                        <li><a href="#">Vận chuyển</a></li>
+                        <li><a href="#">Thành viên</ a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed ">
+                    <h4>Liên hệ chúng tôi</h4>
+
+                    <p>
+                        Công ty TNHH một thành viên HOMEBEAUTY
+                    </p>
+
+                    <p>17DTC4</p>
+                    <p>Office: 09393592609</p>
+                    <ul class="social">
+                        <li><a href="#"><i> </i></a></li>
+                        <li><a href="#"><i class="twitter"> </i></a></li>
+                        <li><a href="#"><i class="rss"> </i></a></li>
+                        <li><a href="#"><i class="gmail"> </i></a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông báo mới</h4>
+                    <p>
+                        Đăng ký để nhận
+                        khuyến mãi và thông tin
+                    </p>
+                    <form>
+                        <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                        <input type="submit" value="Sign up">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop Mỹ Phẩm</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <link rel="shortcut icon" type="png" href="~/images/logo.png" />
+    <!--theme-style-->
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+    <!-- start menu -->
+    <link href="~/Content/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/memenu.js"></script>
+    <script>$(document).ready(function () { $(".memenu").memenu(); });</script>
+    <script src="~/Scripts/simpleCart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!--header-->
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+               
+                <div class="search">
+                    
+                        <form>
+                            <input type="text" value="Tìm kiếm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                            <input type="submit" value="Go">
+                        </form>
+                    
+
+                </div>
+                <div class="header-left">
+                    <ul>
+                        
+                        <li><a href="@Url.Action("Dangnhap","TaiKhoan")">Đăng nhập</a></li>
+                        <li><a href="@Url.Action("DangKy","TaiKhoan")">Đăng ký</a></li>
+
+                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <a href="@Url.Action("Index","TrangChu")"><img src="~/images/free_horizontal_on_white_by_logaster.png" alt=""></a>
+
+                </div>
+                <div class=" h_menu4">
+                    <ul class="memenu skyblue">
+                        <li class="active grid"><a class="color8" href="@Url.Action("Index","TrangChu")">Home</a></li>
+                        <li>
+                            <a class="color1" href="#">Danh mục</a>
+                            <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Sản Phẩm:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Danhmuc", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Gian Hàng:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Loai", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a class="color2" href="@Url.Action("Index", "GioiThieu")">Giới Thiệu</a></li>
+
+                        <li><a class="color4" href="@Url.Action("Index", "Blog")">Blog</a></li>
+                        <li><a class="color6" href="@Url.Action("LienHe", "TrangChu")">Liên Hệ</a></li>
+                        @*<li>
+                            <a class="mn-keosao" target="_blank" href="https://keosao.yes24.vn/?scr=home_keosao" onclick="ga('send', 'event',  'Kẹo sao', 'click', 'Kẹo sao_menutop', 1.00, { 'nonInteraction': 1 });"></a>
+                            <a class="mn-cafestyle" target="_blank" href="https://cafestyle.yes24.vn/?scr=home_cafestyle" onclick="ga('send', 'event','Café Style', 'click', 'Café Style_menutop', 1.00, { 'nonInteraction': 1 });"></a>
+                        </li>*@
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <script src="~/Scripts/responsiveslides.min.js"></script>
+            <script>
+                $(function () {
+                    $("#slider").responsiveSlides({
+                        auto: true,
+                        nav: true,
+                        speed: 500,
+                        namespace: "callbacks",
+                        pager: true,
+                    });
+                });
+            </script>
+            <div id="top" class="callbacks_container">
+                <ul class="rslides" id="slider">
+                    <li>
+
+                        <div class="banner-text">
+                            <h3>Tom Ford Ruby Rush - PHÁI ĐẸP PHỤ NỮ</h3>
+                            <p>Những người phụ nữ thông minh luôn tìm kiếm giải pháp làm đẹp thông minh....</p>
+
+                        </div>
+
+                    </li>
+                    <li>
+
+                        <div class="banner-text">
+                            <h3>S-WHITE ĐÃ MANG ĐẾN CHO TÔI LÀN DA TUYỆT VỜI </h3>
+                            <p>Mình là đứa có làn da ngâm bẩm sinh từ nhỏ cho đến tuổi dậy thì. Da đã không trắng như những đứa con gái khác, lại còn hay rong chơi ngoài đường nắng chang chang cùng với lũ con trai, nên da đã đen nay lại còn đen hơn.</p>
+
+
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="banner-text">
+                            <h3>DETOX </h3>
+                            <p>Thanh lọc cơ thể khá phổ biến hiện nay đã được nhiều người áp dụng.</p>
+
+
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--content-->
+    <div class="content">
+        <div class="container">
+
+            <div class="content-top">
+                @RenderBody()
+            </div>
+            <!----->
+            <div class="box-heading">
+                <h5 style="text-align:center; font-size:20px;">Video Bí Quyết Làm Đẹp</h5>
+                <hr />
+
+                <iframe width="360" height="315" src="https://www.youtube.com/embed/-gCv_sZajnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+                <iframe width="360" height="315" src="https://www.youtube.com/embed/ENXpEe17Oa0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe width="360" height="315" src="https://www.youtube.com/embed/VY2YyRqiI40" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h2 style="text-align:center">
+                Tin Tức
+            </h2>
+            <hr />
+            <h4 style="color:black">
+                <div class="row news">
+                    <div class="col-xs-12" >
+
+                        <ul class="list-unstyled" >
+
+                            <li>
+                                <a href="/news/trung-quoc-phat-hien-co-so-lam-gia-hon-7-000-lo-kem-chong-nang-anessa-nhieu-shop-viet-nam-ban-chi-bang-1-10-gia-goc-23-5-2019.htm" title="Trung Quốc ph&#225;t hiện cơ sở l&#224;m giả hơn 7.000 lọ kem chống nắng Anessa, nhiều shop Việt Nam b&#225;n chỉ bằng 1/10 gi&#225; gốc">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Trung Quốc ph&#225;t hiện cơ sở l&#224;m giả hơn 7.000 lọ kem chống nắng Anessa, nhiều shop Việt Nam b&#225;n chỉ bằng 1/10 gi&#225; gốc
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/sinh-nhat-thu-10-cua-xuanhanh-com-9-5-2019.htm" title="Sinh nhật thứ 10 của xuanhanh.com">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Sinh nhật thứ 10 của xuanhanh.com
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="/news/lich-nghi-le-30-4-va-1-5-22-4-2020.htm" title="Lịch nghỉ lễ 30/4 v&#224; 1/5">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Lịch nghỉ lễ 30/4 v&#224; 1/5
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/van-nan-anti-vaccine-ngay-cang-nghiem-trong-khien-facebook-google-va-amazon-bi-yeu-cau-hanh-dong-gap-rut-14-3-2020.htm" title="Vấn nạn anti-vaccine ng&#224;y c&#224;ng nghi&#234;m trọng khiến Facebook, Google v&#224; Amazon bị y&#234;u cầu h&#224;nh động gấp r&#250;t">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Vấn nạn anti-vaccine ng&#224;y c&#224;ng nghi&#234;m trọng khiến Facebook, Google v&#224; Amazon bị y&#234;u cầu h&#224;nh động gấp r&#250;t
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/chao-mung-ngay-quoc-te-phu-nu-8-3-2-3-2020.htm" title="Ch&#224;o mừng ng&#224;y quốc tế phụ nữ 8/3">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Ch&#224;o mừng ng&#224;y quốc tế phụ nữ 8/3
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/top-5-cay-son-do-high-end-don-nga-phai-dep-dip-tet-2020-15-1-2020.htm" title="TOP 5 C&#194;Y SON ĐỎ HIGH-END ĐỐN NG&#195; PH&#193;I ĐẸP DỊP TẾT 2020">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;TOP 5 C&#194;Y SON ĐỎ HIGH-END ĐỐN NG&#195; PH&#193;I ĐẸP DỊP TẾT 2019
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/danh-sach-tang-qua-tet-14-1-20120.htm" title="Danh s&#225;ch tặng qu&#224; tết">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Danh s&#225;ch tặng qu&#224; tết
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/khai-truong-nha-phan-phoi-doc-quyen-ong-tam-dao-tai-phan-thiet-22-11-2019.htm" title="Khai trương nh&#224; ph&#226;n phối độc quyền Ong Tam Đảo tại Phan Thiết">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Khai trương nh&#224; ph&#226;n phối độc quyền Ong Tam Đảo tại Phan Thiết
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/mung-ngay-phu-nu-viet-nam-20-10-16-10-2019.htm" title="Mừng ng&#224;y phụ nữ Việt Nam 20/10">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Mừng ng&#224;y phụ nữ Việt Nam 20/10
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/news/khai-truong-chi-nhanh-phan-thiet-10-10-2019.htm" title="Khai trương chi nh&#225;nh Phan Thiết">
+                                    <i class="fa fa-angle-double-right"></i>&nbsp;Khai trương chi nh&#225;nh Phan Thiết
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+            </h4>
+           
+            <div class="container">
+                <div class="promo">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="text-center" style="font-size:19px">Vì sao bạn nên mua hàng tại BeautyShop.com?</h3>
+                        </div>
+                        <hr />
+                        <div class="col-xs-12 col-sm-6">
+                            <!-- promo item -->
+                            <div class="promo-item br-red">
+                                <!-- icon -->
+
+                                <img src="~/images/b1.jpg" width="360" height="210" />
+                                <!-- heading -->
+                                <!-- sub text -->
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <!-- promo item -->
+                            <div class="promo-item br-green">
+                                <!-- icon -->
+
+
+
+                                <img src="~/images/b2.jpg" width="360" height="210" />
+                                <!-- heading -->
+                                <!-- sub text -->
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <!-- promo item -->
+                            <div class="promo-item br-orange">
+                                <!-- icon -->
+                                <i class="fa fa-cube"></i>
+                                <!-- heading -->
+                                <h2>Hàng luôn có sẵn</h2>
+                                <!-- sub text -->
+                                <span class="sub-text">Khách hàng không cần gọi điện kiểm tra</span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <!-- promo item -->
+                            <div class="promo-item br-blue">
+                                <!-- icon -->
+                                <a href="/page/shipping-guide">
+                                    <i class="fa fa-truck"></i>
+                                    <!-- heading -->
+                                    <h2>Giao hàng miễn phí</h2>
+                                    <!-- sub text -->
+                                    <span class="sub-text">Cho các đơn hàng từ 500,000 <sup>đ</sup></span>
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+    
+   
+    <!----->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v3.3'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="380043785968401"
+         theme_color="#fa3c4c"
+         logged_in_greeting="Chào bạn , Tối có thể giúp gì cho bạn?"
+         logged_out_greeting="Chào bạn , Tối có thể giúp gì cho bạn?">
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top-at">
+
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông tin thêm</h4>
+                    <ul class="nav-bottom">
+                        <li><a href="#">Cách đặt mua</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="@Url.Action("LienHe", "TrangChu")">Địa chỉ</a></li>
+                        <li><a href="#">Vận chuyển</a></li>
+                        <li><a href="@Url.Action("ThanhVien","TrangChu")">Thành viên</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 amet-sed ">
+                    <h4>Liên hệ chúng tôi</h4>
+
+                    <p>
+                       Công ty TNHH Một thành viên HomeGroup
+                    </p>
+
+                    <p>17DTHC4</p>
+                    <p>Office:  0393592609</p>
+                    <ul class="social">
+                        <li><a href="#"><i> </i></a></li>
+                        <li><a href="#"><i class="twitter"> </i></a></li>
+                        <li><a href="#"><i class="rss"> </i></a></li>
+                        <li><a href="#"><i class="gmail"> </i></a></li>
+
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+
+                    <!-- footer widget -->
+                    <div class="widget">
+                        <h5 style="color:white; font-size:20px">Fan page</h5>
+                        <hr />
+                        <div class="fb-page" data-href="http://www.facebook.com/XuanHanhCosmetics" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-height="200">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="http://www.facebook.com/XuanHanhCosmetics"><a href="http://www.facebook.com/XuanHanhCosmetics">Xu&#226;n Hạnh</a></blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông báo mới</h4>
+                    <p>
+                        Đăng ký để nhận
+                        khuyến mãi và thông tin
+                    </p>
+                    <form>
+                        <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                        <input type="submit" value="Sign up">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-class">
+            <p>© 2020 HUTECH IT</p>
+        </div>
+    </div>
+</body>
+</html>

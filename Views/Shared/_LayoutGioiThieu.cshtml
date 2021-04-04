@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Giới Thiệu</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <link rel="shortcut icon" type="png" href="~/images/logo.png" />
+    <link href="~/Content/gioithieu.css" rel="stylesheet" />
+    <!--theme-style-->
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="New Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+    <!-- start menu -->
+    <link href="~/Content/memenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/memenu.js"></script>
+    <script>$(document).ready(function () { $(".memenu").memenu(); });</script>
+    <script src="~/Scripts/simpleCart.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="search">
+                    <form>
+                        <input type="text" value="Tìm kiếm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="Go">
+                    </form>
+                </div>
+                <div class="header-left">
+                    <ul>
+                        <li><a href="@Url.Action("Dangnhap","TaiKhoan")">Đăng nhập</a></li>
+                        <li><a href="@Url.Action("DangKy","TaiKhoan")">Đăng ký</a></li>
+
+                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
+                    </ul>
+                    </ul>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <a href="@Url.Action("Index","TrangChu")"><img src="~/images/free_horizontal_on_white_by_logaster.png" alt=""></a>
+                </div>
+                <div class=" h_menu4">
+                    <ul class="memenu skyblue">
+                        <li class="active grid"><a class="color8" href="@Url.Action("Index","TrangChu")">Home</a></li>
+
+                        <li>
+                            <a class="color1" href="#">Danh mục</a>
+                            <div class="mepanel">
+                                <div class="row">
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Sản Phẩm:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Danhmuc", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>Gian Hàng:</h4>
+                                            <ul>
+                                                <li>
+                                                    @Html.Action("Loai", "TrangSanPham")
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="color2" href="#">Giới Thiệu</a></li>
+
+                        <li><a class="color4" href="@Url.Action("Index", "Blog")">Blog</a></li>
+                        <li><a class="color6" href="@Url.Action("LienHe", "TrangChu")">Liên Hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div>
+            @RenderBody()
+        </div>
+        <div class="intro">
+            <div class="img">
+                
+                <img src="~/images/b2fd8f0b77ae9face1bc9a388b8f75aa80f59f47.jpg" />
+            </div>
+            <div class="3pp">
+                <p>
+                    phụ nữ ai cũng mong muốn mình ngày càng trẻ đẹp xinh xắn,chỉ có trẻ đẹp thì bạn mới cảm thấy tự tin trước mọi người đặt biệt người cùng mình đi cuối đoạn đường , vẽ trẻ đẹp được toát lên bởi khuôn mặt trắng sáng với nụ cười tươi .Có nhiều người thường nói nét đẹp bên trong mới đáng quý hơn nét đẹp bên ngoài . Nhưng nếu bạn đạt được 2 nét đẹp bên trong lẫn bên ngoài thì ta sẽ trở nên hoàn mỹ đó là điều mà bao nhiều người phụ nữ muốn đạt đến . HomeBeauty sẽ giúp bạn làm đẹp và đạt được điều mà bạn mong muốn.
+                <p>
+                    Với niềm đam mê mang đến vẻ đẹp cho nhiều người phụ nữ trong và ngoài nước , <b>HomeBeauty</b> luôn nổ lực tìm hiểu nhu cầu khách hàng , và tìm tòi những dòng mỹ phẩm tốt nhất trên thị trường để phục vụ nhu cầu khách hàng
+
+                </p>
+
+                <p>
+                    Những dòng mỹ phẩm cao cấp được <b>HomeBeauty</b> nhập về luôn đạt tiêu chuẩn có giấy chứng nhận và kiểm định độ an toàn đẩy đủ và đã được hàng ngàn khách hàng sử dụng và tin dùng phản ánh rất tốt về dòng mỹ phẩm của HomeBeauty.
+
+                </p>
+                <div class="img">
+                 
+                    <img src="~/images/b3.jpg" />
+                </div>
+
+                <p>
+                    Sắc đẹp, tuổi trẻ và sự quyến rũ là yếu tố rất cần trong cuộc sống của biết bao người phụ nữ <b>HomeBeauty</b> luôn hiểu bạn cần gì ? muốn gì ? . Đó là lí do <b>HomeBeauty</b> ra đời và lớn mạnh như ngày hôm nay . Hãy cùng <b>HomeBeauty</b> làm đẹp mỗi ngày các bạn nhé !
+                </p>
+
+                <p>
+                    <b>HomeBeauty</b> chuyên cung cấp sỉ và lẽ các mặt hàng mỹ phẩm cao cấp trong toàn quốc .
+                    <b>HomeBeauty</b> sẽ luôn đồng hành cùng bạn trở thành người phụ nữ thông minh, xinh đẹp , sang trọng và quyến rũ .
+                    “Sắc đẹp của phụ nữ là niềm vinh dự của HomeBeauty“
+                </p>
+
+                <p><b>Mỹ phẩm</b> là một trong những công cụ hỗ trợ làm đẹp mà tất cả mọi người đều yêu thích, ngày nay với sự tiến bộ của ngành thẩm mỹ đã cho ra đời rất nhiều dòng sản phẩm khác nhau. Không thể phủ nhận công dụng và hiệu quả tuyệt vời mà mỹ phẩm mang lại trong quá trình làm đẹp, phòng ngừa và đặc trị cho tất cả chúng ta.</p>
+
+                <p>
+                    Dùng mỹ phẩm làm đẹp tại nhà là nhu cầu cần thiết cho mỗi người, ai cũng muốn mình trẻ đẹp mãi mãi. Mỹ phẩm cần cho quá trình nuôi dưỡng, ngăn ngừa các tổn thương da từ bên ngoài và phục hồi lại làn da đã bị thương.
+                </p>
+
+                <p>Chuỗi cửa hàng HomeBeauty chúng tôi tự hào khi có một danh mục sản phẩm cao cấp, chăm sóc sắc đẹp từ bên ngoài lẫn bên trong bao gồm 3 dòng sản phẩm xuất xứ từ các thương hiệu nổi tiếng của Pháp, Ý, Mỹ, Nhật và cả quốc gia hàng đầu về thẩm mỹ là Hàn Quốc.</p>
+                <p>
+                    Thành phần chính của các sản phẩm của chúng tôi đa số được chiết xuất từ thiên nhiên như trái cọ, cám gạo, trái ô liu …, hương thơm tự nhiên của các loại hoa trái miền nhiệt đới. Độc đáo có các sản phẩm mặt nạ dưỡng da được chiết xuất từ than đá, rong biển, bùn, … dành riêng cho các loại da khô, da dầu, da mụn … Với những thành phần thiên nhiên này, các sản phẩm của chúng t đảm bảo được độ kích ứng da thấp nhất cũng như không ảnh hưởng đến cấu tạo làn da của người châu Á.
+                </p>
+            </div>
+        </div>
+
+        <div class="video">
+            <iframe width="700" height="315" src="https://www.youtube.com/embed/U7IAMd6x2kM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top-at">
+
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông tin thêm</h4>
+                    <ul class="nav-bottom">
+                        <li><a href="#">Cách đặt mua</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Địa chỉ</a></li>
+                        <li><a href="#">Vận chuyển</a></li>
+                        <li><a href="#">Thành viên</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed ">
+                    <h4>Liên hệ chúng tôi</h4>
+
+                    <p>
+                        Phạm Văn Tâm
+                    </p>
+
+                    <p>17DTHC4</p>
+                    <p>Office: 0393592609</p>
+                    <ul class="social">
+                        <li><a href="#"><i> </i></a></li>
+                        <li><a href="#"><i class="twitter"> </i></a></li>
+                        <li><a href="#"><i class="rss"> </i></a></li>
+                        <li><a href="#"><i class="gmail"> </i></a></li>
+
+                    </ul>
+                </div>
+                <div class="col-md-4 amet-sed">
+                    <h4>Thông báo mới</h4>
+                    <p>
+                        Đăng ký để nhận
+                        khuyến mãi và thông tin
+                    </p>
+                    <form>
+                        <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+                        <input type="submit" value="Sign up">
+                    </form>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+
+    </div>
+  
+</body>
+</html>
